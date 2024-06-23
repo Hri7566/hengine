@@ -1,4 +1,5 @@
 # Build files
+/Makefile
 /*.make
 /bin
 /obj
