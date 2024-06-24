@@ -10,7 +10,7 @@ workspace "Hello"
 project "HelloWorld"
 	require "premake-ninja.ninja"
 	kind "ConsoleApp"
-	language "C"
+	language "C++"
 	targetdir "bin/%{cfg.buildcfg}"
 
 	files { "src/**.hpp", "src/**.cpp" }
