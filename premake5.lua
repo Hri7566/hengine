@@ -12,6 +12,7 @@ project "HelloWorld"
 	kind "ConsoleApp"
 	language "C++"
 	targetdir "bin/%{cfg.buildcfg}"
+	links { "raylib" }
 
 	files { "src/**.hpp", "src/**.cpp" }
 
