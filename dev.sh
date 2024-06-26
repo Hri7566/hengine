@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-./build.sh && bin/Debug/HelloWorld
+./build.sh && bin/test/Debug/HengineTest

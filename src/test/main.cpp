@@ -1,13 +1,16 @@
-#include "ui/Button.hpp"
+#include "../hengine/ui/Button.hpp"
+#include "config.hpp"
 #include <raylib.h>
 
+void start_window(void);
+
 int main(void) {
-	InitWindow(640, 480, "hengine test program");
+	InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE);
 	SetExitKey(KEY_Q);
 
 	float delta;
 
-	Button btnTest({64, 64}, {96, 16}, RAYWHITE);
+	Button btnTest({64, 64}, {96, 16}, RAYWHITE, GRAY);
 
 	while (!WindowShouldClose()) {
 		delta = GetFrameTime();
@@ -24,4 +27,8 @@ int main(void) {
 
 	CloseWindow();
 	return 0;
+}
+
+void start_window() {
+
 }

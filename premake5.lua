@@ -4,24 +4,42 @@
 ---@diagnostic disable
 -- stylua: ignore start
 
-workspace "Hello"
+require "premake-ninja.ninja"
+
+workspace "Hengine"
 	configurations { "Debug", "Release" }
+	platforms { "Linux", "Win64" }
 
-project "HelloWorld"
-	require "premake-ninja.ninja"
-	kind "ConsoleApp"
-	language "C++"
-	targetdir "bin/%{cfg.buildcfg}"
-	links { "raylib" }
+	project "Hengine"
+		kind "StaticLib"
+		language "C++"
+		targetdir "bin/hengine%{cfg.buildcfg}"
+		links { "raylib" }
 
-	files { "src/**.hpp", "src/**.cpp" }
+		files { "src/hengine/**.hpp", "src/hengine/**.cpp" }
 
-	filter "configurations:Debug"
-		defines { "DEBUG" }
-		symbols "On"
+		filter "platforms:Linux"
+			system "Linux"
+			architecture "x86_64"
 
-	filter "configurations:Release"
-		defines { "NDEBUG" }
-		optimize "On"
+		filter "platforms:Win64"
+			system "Windows"
+			architecture "x86_64"
+
+		filter "configurations:Debug"
+			defines { "DEBUG" }
+			symbols "On"
+
+		filter "configurations:Release"
+			defines { "NDEBUG" }
+			optimize "On"
+
+	project "HengineTest"
+		kind "ConsoleApp"
+		language "C++"
+		targetdir "bin/test/%{cfg.buildcfg}"
+		links { "Hengine", "raylib" }
+
+		files { "src/test/**.hpp", "src/test/**.cpp" }
 
 -- stylua: ignore end
