@@ -9,7 +9,7 @@ Engine::Engine(EngineConfig c, void (*up)(float), void (*dr)(void))
 Engine::~Engine(void) {}
 
 void Engine::start(void) {
-	InitWindow(640, 480, "hengine");
+	InitWindow(config.window_config.size.x, config.window_config.size.y, config.window_config.title.c_str());
 
 	while (!WindowShouldClose()) {
 		delta = GetFrameTime();
