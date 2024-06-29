@@ -16,11 +16,11 @@ void Engine::start(void) {
 		update(delta);
 
 		BeginDrawing();
-
 		draw();
-
 		EndDrawing();
 	}
+
+	CloseWindow();
 }
 
 void Engine::update(float delta) {

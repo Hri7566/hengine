@@ -5,6 +5,9 @@
 
 class Actor {
 public:
+	Actor();
+	~Actor();
+
 	std::string id;
 
 	virtual void update(float delta);
