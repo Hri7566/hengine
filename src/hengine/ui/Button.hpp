@@ -1,10 +1,11 @@
 #ifndef _HE_BUTTON_H
 #define _HE_BUTTON_H
 
+#include "../actor/Actor.hpp"
 #include "raylib.h"
 #include <string>
 
-class Button {
+class Button : Actor {
 public:
 	Vector2 position;
 	Vector2 size;

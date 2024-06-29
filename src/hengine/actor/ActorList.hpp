@@ -7,11 +7,14 @@
 
 class ActorList {
 private:
-	std::vector<Actor> list;
+	std::vector<Actor*> list;
 
 public:
-	void add(Actor a);
+	void add(Actor *a);
 	void remove(std::string id);
+
+	void update(float delta);
+	void draw(void);
 };
 
 #endif

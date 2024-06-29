@@ -40,7 +40,7 @@ workspace "Hengine"
 		targetdir "bin/test/%{cfg.buildcfg}"
 		links { "Hengine", "raylib" }
 
-		files { "src/hengine/**.hpp", "src/test/**.hpp", "src/test/**.cpp" }
+		files { "src/test/**.hpp", "src/test/**.cpp" }
 
 		filter "platforms:Linux"
 			system "Linux"
