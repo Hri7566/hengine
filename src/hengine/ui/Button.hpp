@@ -2,7 +2,7 @@
 #define _HE_BUTTON_H
 
 #include "../actor/Actor.hpp"
-#include "raylib.h"
+#include <raylib.h>
 #include <string>
 
 class Button : Actor {

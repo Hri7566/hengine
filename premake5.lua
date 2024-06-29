@@ -13,7 +13,7 @@ workspace "Hengine"
 	project "Hengine"
 		kind "StaticLib"
 		language "C++"
-		targetdir "bin/hengine%{cfg.buildcfg}"
+		targetdir "bin/hengine/%{cfg.buildcfg}"
 		links { "raylib" }
 
 		files { "src/hengine/**.hpp", "src/hengine/**.cpp" }
