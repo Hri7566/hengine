@@ -6,7 +6,7 @@
 class Actor {
 public:
 	Actor();
-	~Actor();
+	virtual ~Actor();
 
 	std::string id;
 

@@ -40,6 +40,22 @@ workspace "Hengine"
 		targetdir "bin/test/%{cfg.buildcfg}"
 		links { "Hengine", "raylib" }
 
-		files { "src/test/**.hpp", "src/test/**.cpp" }
+		files { "src/hengine/**.hpp", "src/test/**.hpp", "src/test/**.cpp" }
+
+		filter "platforms:Linux"
+			system "Linux"
+			architecture "x86_64"
+
+		filter "platforms:Win64"
+			system "Windows"
+			architecture "x86_64"
+
+		filter "configurations:Debug"
+			defines { "DEBUG" }
+			symbols "On"
+
+		filter "configurations:Release"
+			defines { "NDEBUG" }
+			optimize "On"
 
 -- stylua: ignore end

@@ -18,9 +18,11 @@ class Engine {
 private:
 	float delta;
 
+	void load(void);
 	void update(float delta);
 	void draw(void);
 
+	void (*postLoad)();
 	void (*postUpdate)(float);
 	void (*postDraw)(void);
 
@@ -28,7 +30,7 @@ public:
 	ActorList actor_list;
 	EngineConfig config;
 
-	Engine(EngineConfig c, void (*up)(float), void (*dr)(void));
+	Engine(EngineConfig c, void (*l)(void), void (*up)(float), void (*dr)(void));
 	~Engine(void);
 
 	void start(void);
