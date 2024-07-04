@@ -16,3 +16,7 @@ $ premake5 ninja && ninja
 ```
 
 A static library file will be in `bin/hengine/Debug`.
+
+## Why are you making a game engine?
+
+I'm learning.
